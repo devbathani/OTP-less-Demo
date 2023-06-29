@@ -1,6 +1,6 @@
 <img src="readme/otpless_icon.png" align="right" />
 
-# OTPless Demo Codes [![GoOTPless](https://cdn.jsdelivr.net/gh/sindresorhus/awesome@d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome#readme)
+# OTPless Demo Codes [![GoOTPless](https://cdn.jsdelivr.net/gh/sindresorhus/awesome@d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://otpless.com)
 > A curated list of all demo codes
 
 This Repo will consist of all the frameworks demo code with integrated OTPless SDK in it.
