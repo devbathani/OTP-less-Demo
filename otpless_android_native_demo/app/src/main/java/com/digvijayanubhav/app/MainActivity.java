@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         Button loginButton = findViewById(R.id.loginButton);
         TextView userName = findViewById(R.id.userName);
         TextView userNumber = findViewById(R.id.userNumber);
-
+     
+        //This function will be used to trigger the OTPless floater
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
