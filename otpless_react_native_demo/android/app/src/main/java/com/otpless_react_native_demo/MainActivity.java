@@ -6,16 +6,15 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
 import android.os.Bundle;
-import com.otpless.views.OtplessManager;
+import com.otplessreactnative.OtplessReactNativeManager;
 
 public class MainActivity extends ReactActivity {
 
-  @Override
+@Override
 protected void onCreate(Bundle savedInstanceState) {
-super.onCreate(savedInstanceState);
-OtplessManager.getInstance().init(this);
+ super.onCreate(savedInstanceState);
+ OtplessReactNativeManager.INSTANCE.initOtpless(this);
 }
-
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
    * rendering of the component.

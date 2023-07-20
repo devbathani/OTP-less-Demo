@@ -7,37 +7,25 @@
 
 import React from 'react';
 import {View, StyleSheet, Text, Alert} from 'react-native';
-import {NativeModules, NativeEventEmitter} from 'react-native';
-const {OtplessModule} = NativeModules;
+import {OtplessEventModule} from 'otpless-react-native';
 import {TouchableOpacity} from 'react-native';
 
+// create otpless event module
+const eventModule = new OtplessEventModule((data: any) => {
+  let message: string = '';
+  if (data.data === null || data.data === undefined) {
+    message = data.errorMessage;
+  } else {
+    message = `token: ${data.data.token}`;
+    // todo here
+    Alert.alert('OTPless', message);
+  }
+});
+eventModule.showFabButton(false);
+
 function whatsAppLogin() {
-  // to show OTPLESS popup
-  OtplessModule.startOtplessWithEvent();
-  // to receive otplessUser details and token
-  const eventListener = new NativeEventEmitter(OtplessModule).addListener(
-    'OTPlessSignResult',
-    result => {
-      if (result.data == null || result.data === undefined) {
-        let error = result.errorMessage;
-        console.log('error', error);
-      } else {
-        // const token = result.data.token;
-        console.log('data', result.data);
-        const jsonObject = result.data;
-
-        const jsonString = JSON.stringify(jsonObject);
-
-        Alert.alert('User Data', jsonString, [
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ]);
-        // send this token to your backend to validate user details
-        // setOtplessResult(token);
-      }
-    },
-  );
-  // call this method when you login is completed
-  OtplessModule.onSignInCompleted();
+  // to start the sdk
+  eventModule.start();
 }
 function App(): JSX.Element {
   return (

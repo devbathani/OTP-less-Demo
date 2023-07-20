@@ -1,0 +1,7 @@
+{
+  "name": "otpless_ionic_demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
