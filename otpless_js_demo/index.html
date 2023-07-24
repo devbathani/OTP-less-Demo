@@ -2,18 +2,43 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript" src="https://otpless.com/auth.js"></script>
-      <!-- Get user's WhatsApp number and name -->
-      <script type="text/javascript">
-        function otpless(otplessUser) {
-          console.log(JSON.stringify(otplessUser));
-          window.alert(JSON.stringify(otplessUser));
-        }
-      </script>
+    <script type="text/javascript">
+    function loadScript() {
+  const script = document.createElement("script");
+  script.src = "https://otpless.com/auth.js";
+  script.id = "otplessIdScript";
+  document.body.appendChild(script);
+}
+
+function otplessCallback(otplessUser) {
+  console.log(otplessUser);
+  window.alert("OTPless User: " + otplessUser);
+}
+
+window.onload = function () {
+  loadScript();
+
+  window.otpless = otplessCallback;
+
+  window.onbeforeunload = function () {
+    let script = document.getElementById("otplessIdScript");
+    if (script) {
+      document.body.removeChild(script);
+    }
+  };
+};
+
+
+</script>
     <title>OTPless Javascript Demo</title>
   <body>
     <div id="otpless_img">
       <img src="otpless_icon.png" alt="Description of the image">
+      
+    </div>
+    <div id="otpless_button">
+      <button id="otpless"  onclick="loadScript()" custom="true">Login</button>
+      
     </div>
   </body>
 </html> 
