@@ -11,9 +11,9 @@ import Flutter
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 
-  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool { 
-    if Otpless.sharedInstance.isOtplessDeeplink(url: url){
-    Otpless.sharedInstance.processOtplessDeeplink(url: url) }
-    return true
+  override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool { 
+     if Otpless.sharedInstance.isOtplessDeeplink(url: url){
+     Otpless.sharedInstance.processOtplessDeeplink(url: url) }
+     return true
 }
 }
