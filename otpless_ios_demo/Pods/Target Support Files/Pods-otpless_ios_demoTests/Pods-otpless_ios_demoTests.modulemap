@@ -1,0 +1,6 @@
+framework module Pods_otpless_ios_demoTests {
+  umbrella header "Pods-otpless_ios_demoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
