@@ -10,8 +10,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        //Add Jitpack
-        maven{url 'https://jitpack.io'}
     }
 }
 rootProject.name = "Otpless Android Native Demo"
