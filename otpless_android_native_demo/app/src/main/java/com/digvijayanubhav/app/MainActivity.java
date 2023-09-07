@@ -54,18 +54,26 @@ public class MainActivity extends AppCompatActivity {
         // Initialise OtplessView
         otplessView = OtplessManager.getInstance().getOtplessView(this);
         otplessView.setCallback(this::onOtplessCallback, null, false);
+        otplessView.showOtplessFab(false);
         // calling startOtpless method is optional to call here, we can also call it on buttons click
 
         Button loginButton = findViewById(R.id.loginButton);
+        Button loginButton2 = findViewById(R.id.loginButton2);
         //This function will be used to trigger the OTPless floater
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 otplessView.showOtplessLoginPage();
-                // very important to call here, verification is done on low memory recreate case
-                otplessView.verifyIntent(getIntent());
             }
         });
+        loginButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                otplessView.startOtpless();
+            }
+        });
+// very important to call here, verification is done on low memory recreate case
+        otplessView.verifyIntent(getIntent());
     }
     @Override
     protected void onNewIntent(Intent intent) {

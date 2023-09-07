@@ -18,6 +18,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.906" />
 
+    <Button
+        android:id="@+id/loginButton2"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:text="Login via Old Flow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
+
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
