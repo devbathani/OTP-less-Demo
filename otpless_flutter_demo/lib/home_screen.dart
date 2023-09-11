@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> startOtpless() async {
     await _otplessFlutterPlugin.hideFabButton();
-    _otplessFlutterPlugin.start((result) {
+    _otplessFlutterPlugin.openLoginPage((result) {
       name = result['data']['mobile']['name'];
       number = result['data']['mobile']['number'];
       setState(() {});

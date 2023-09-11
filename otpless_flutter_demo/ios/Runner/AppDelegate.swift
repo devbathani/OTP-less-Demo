@@ -1,5 +1,6 @@
 import UIKit
 import Flutter
+import OtplessSDK
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
