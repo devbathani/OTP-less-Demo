@@ -11,8 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String name = "";
-  String number = "";
+  String? name;
+  String? number;
 
   //Define the instance
   final _otplessFlutterPlugin = Otpless();
