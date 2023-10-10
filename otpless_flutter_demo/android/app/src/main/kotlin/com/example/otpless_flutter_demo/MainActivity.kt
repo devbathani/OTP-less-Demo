@@ -1,7 +1,7 @@
 package com.digvijayanubhav.app
 
 import io.flutter.embedding.android.FlutterActivity
-import com.example.otpless_flutter.OtplessFlutterPlugin
+import com.otpless.otplessflutter.OtplessFlutterPlugin
 import android.content.Intent
 
 class MainActivity: FlutterActivity() {

@@ -116,10 +116,10 @@ packages:
     dependency: "direct main"
     description:
       name: otpless_flutter
-      sha256: fcd4e1024e05d39c0aafb088a3df88027f5d4a98bbba85e4e2516fe2c0a433a7
+      sha256: ef793e8c5a3d9295d09e2c9dc96145258e3315d289ebd3b111cd477b1429fe75
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.4"
+    version: "2.0.0"
   path:
     dependency: transitive
     description:
