@@ -11,12 +11,6 @@ import {OtplessModule} from 'otpless-react-native';
 import {TouchableOpacity} from 'react-native';
 
 const module = new OtplessModule();
-const extra = {
-  method: 'get',
-  params: {
-    cid: 'ef0kpz5g',
-  },
-};
 
 module.showFabButton(false);
 
@@ -27,10 +21,9 @@ function whatsAppLogin() {
     if (data.data === null || data.data === undefined) {
       message = data.errorMessage;
     } else {
-      message = 'token: ${data.data.token}';
-      console.log('Token :', message);
+      console.log('Token :', data);
     }
-  }, extra);
+  });
 }
 function App(): JSX.Element {
   return (
