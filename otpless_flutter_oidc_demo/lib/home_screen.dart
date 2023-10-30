@@ -11,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String? name = '';
+  String? number = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,42 +25,30 @@ class _HomeScreenState extends State<HomeScreen> {
               .signInWithProvider(provider)
               .then((value) {
             log(value.additionalUserInfo.toString());
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.deepPurpleAccent,
-                content: SizedBox(
-                  height: 60,
-                  child: Text(
-                    value.additionalUserInfo!.username!,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            );
-            setState(() {});
+            if (value.additionalUserInfo != null) {
+              name = value.additionalUserInfo!.profile!['name'];
+              number = value.additionalUserInfo!.profile!['phone_number'];
+              setState(() {});
+            }
           });
         },
         child: const Text(
           "Login",
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
             Text(
-              "Name : ",
-              style: TextStyle(
+              "Name : $name",
+              style: const TextStyle(
                 fontSize: 25,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
-              "Number : ",
-              style: TextStyle(
+              "Number : $number",
+              style: const TextStyle(
                 fontSize: 25,
               ),
             ),
