@@ -7,13 +7,13 @@ import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
 import android.os.Bundle;
 import com.otplessreactnative.OtplessReactNativeManager;
+import android.content.Intent;
 
 public class MainActivity extends ReactActivity {
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
  super.onCreate(savedInstanceState);
- OtplessReactNativeManager.INSTANCE.initOtpless(this);
 }
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -23,6 +23,18 @@ protected void onCreate(Bundle savedInstanceState) {
   protected String getMainComponentName() {
     return "otpless_react_native_demo";
   }
+
+  @Override
+public void onNewIntent(Intent intent) {
+	super.onNewIntent(intent);
+	OtplessReactNativeManager.INSTANCE.onNewIntent(intent);
+}
+
+  @Override
+public void onBackPressed() {
+	if (OtplessReactNativeManager.INSTANCE.onBackPressed()) return;
+	super.onBackPressed();
+}
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. Here we use a util class {@link

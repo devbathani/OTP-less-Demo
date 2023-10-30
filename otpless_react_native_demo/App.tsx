@@ -7,25 +7,30 @@
 
 import React from 'react';
 import {View, StyleSheet, Text, Alert} from 'react-native';
-import {OtplessEventModule} from 'otpless-react-native';
+import {OtplessModule} from 'otpless-react-native';
 import {TouchableOpacity} from 'react-native';
 
-// create otpless event module
-const eventModule = new OtplessEventModule((data: any) => {
-  let message: string = '';
-  if (data.data === null || data.data === undefined) {
-    message = data.errorMessage;
-  } else {
-    message = `token: ${data.data.token}`;
-    // todo here
-    Alert.alert('OTPless', message);
-  }
-});
-eventModule.showFabButton(false);
+const module = new OtplessModule();
+const extra = {
+  method: 'get',
+  params: {
+    cid: 'ef0kpz5g',
+  },
+};
+
+module.showFabButton(false);
 
 function whatsAppLogin() {
   // to start the sdk
-  eventModule.start();
+  module.showLoginPage(data => {
+    let message: string = '';
+    if (data.data === null || data.data === undefined) {
+      message = data.errorMessage;
+    } else {
+      message = 'token: ${data.data.token}';
+      console.log('Token :', message);
+    }
+  }, extra);
 }
 function App(): JSX.Element {
   return (
