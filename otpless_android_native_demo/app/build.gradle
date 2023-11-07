@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
 
     //OTPless Implementation
-    implementation 'io.github.otpless-tech:otpless-android-sdk:2.1.6'
+    implementation 'io.github.otpless-tech:otpless-android-sdk:2.1.7'
 
 
     testImplementation 'junit:junit:4.13.2'
