@@ -51,5 +51,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).otpless</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>otpless</string>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>whatsapp</string>
+		<string>otpless</string> 
+		<string>gootpless</string>
+		<string>com.otpless.ios.app.otpless</string> 
+		<string>googlegmail</string>
+	</array>
 </dict>
 </plist>

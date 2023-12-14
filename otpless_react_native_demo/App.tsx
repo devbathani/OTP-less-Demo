@@ -15,13 +15,19 @@ const module = new OtplessModule();
 module.showFabButton(false);
 
 function whatsAppLogin() {
-  // to start the sdk
-  module.showLoginPage(data => {
-    let message: string = '';
-    if (data.data === null || data.data === undefined) {
-      message = data.errorMessage;
+  module.isWhatsappInstalled(isWhatsappInstalled => {
+    if (isWhatsappInstalled) {
+      // to start the sdk
+      module.showLoginPage(data => {
+        let message: string = '';
+        if (data.data === null || data.data === undefined) {
+          message = data.errorMessage;
+        } else {
+          console.log('Token :', data);
+        }
+      });
     } else {
-      console.log('Token :', data);
+      console.log('Whatsapp not installed');
     }
   });
 }
